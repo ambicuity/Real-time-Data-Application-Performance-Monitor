@@ -1,0 +1,25 @@
+# High-performance configuration for stress testing
+monitoring:
+  interval: 0.5                    # Faster metric collection
+  analysis_interval: 30           # More frequent analysis
+  buffer_size: 50000              # Larger buffer for high-throughput scenarios
+
+metrics:
+  buffer_size: 50000
+  latency_buffer_size: 5000
+
+thresholds:
+  cpu_usage: 90.0                 # Higher CPU threshold for stress tests
+  memory_usage: 95.0              # Higher memory threshold
+  latency_p95: 2000.0             # Accept higher latency during stress
+  min_throughput: 1000.0          # Expect high throughput
+
+simulation:
+  default_scenario: "high_load"
+  default_duration: 600
+
+reporting:
+  default_format: "html"
+  default_hours: 2
+  chart_width: 1200
+  chart_height: 600

@@ -1,0 +1,28 @@
+monitoring:
+  interval: 1.0                    # seconds between metric collection
+  analysis_interval: 60           # seconds between performance analysis
+  buffer_size: 10000              # maximum metrics to keep in memory
+
+metrics:
+  buffer_size: 10000
+  latency_buffer_size: 1000
+
+thresholds:
+  cpu_usage: 80.0                 # percentage
+  memory_usage: 85.0              # percentage  
+  latency_p95: 1000.0             # milliseconds
+  min_throughput: 100.0           # events per second
+
+simulation:
+  default_scenario: "normal_load"
+  default_duration: 300
+
+reporting:
+  default_format: "html"
+  default_hours: 1
+  chart_width: 800
+  chart_height: 400
+
+logging:
+  level: "INFO"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
